@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>OPTISTOCK : Le logiciel de logistic qui fracasse la concu</h1>
+        <nav>
+            <ul>
+                <li><a href="#products" data-section="products">Products</a></li>
+                <li><a href="#sales" data-section="sales">Sales Records</a></li>
+                <li><a href="#categories" data-section="categories">Categories</a></li>
+                <li><a href="#product-categories" data-section="product-categories">Product Categories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="products">
+            <h2>Products</h2>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Threshold</th>
+                        <th>Category ID</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <form id="product-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                
+                <input type="number" id="product-price" placeholder="Price" required>
+                <input type="number" id="product-quantity" placeholder="Quantity" required>
+                <input type="number" id="product-threshold" placeholder="Threshold" required>
+                <select id="product-category" required>
+                    <option value="" disabled selected>Select a Category</option>
+                </select>
+                <textarea id="product-description" placeholder="Product Description" rows="3" required></textarea>
+                <button type="submit">Add Product</button>
+            </form>
+            
+        </section>
+        
+        <section id="sales" class="hidden">
+            <h2>Sales Records</h2>
+            <table id="sales-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product ID</th>
+                        <th>Quantity Sold</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <form id="sales-form">
+                <input type="number" id="sales-product-id" placeholder="Product ID" required>
+                <input type="number" id="sales-quantity" placeholder="Quantity Sold" required>
+                <input type="date" id="sales-date" required>
+                <button type="submit">Add Sales Record</button>
+            </form>
+        </section>
+        
+        <section id="categories" class="hidden">
+            <h2>Categories</h2>
+            <table id="category-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <form id="category-form">
+                <input type="text" id="category-name" placeholder="Category Name" required>
+                <button type="submit">Add Category</button>
+            </form>
+        </section>
+        
+        <section id="product-categories" class="hidden">
+            <h2>Product Categories</h2>
+            <table id="product-category-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Category ID</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <form id="product-category-form">
+                <input type="number" id="product-id" placeholder="Product ID" required>
+                <input type="number" id="category-id" placeholder="Category ID" required>
+                <button type="submit">Add Product-Category</button>
+            </form>
+        </section>
+        
+    </main>
+    <script src="../javascript/script.js" type="module"></script>
+</body>
+</html>
